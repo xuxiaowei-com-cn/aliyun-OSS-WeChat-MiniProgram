@@ -7,6 +7,11 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
+
+  <navigator url="../aliyunoss/aliyunoss" class='aliyunoss' hover-class="navigator-hover">
+    <button>上传页面</button>
+  </navigator>
+
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
