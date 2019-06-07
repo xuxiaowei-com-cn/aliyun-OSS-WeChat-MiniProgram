@@ -4,12 +4,17 @@
  * Copyright (c) 2009, Jeff Mott. All rights reserved.
  * http://code.google.com/p/crypto-js/wiki/License
  */
+
+import crypto from '../crypto/crypto'
+
+var CryptoHMAC;
+
 (function() {
 
   // Shortcut
-  var util = Crypto.util;
+  var util = crypto.util;
 
-  Crypto.HMAC = function(hasher, message, key, options) {
+  CryptoHMAC = function(hasher, message, key, options) {
 
     // Allow arbitrary length keys
     key = key.length > hasher._blocksize * 4 ?
@@ -39,3 +44,7 @@
   };
 
 })();
+
+module.exports = {
+  CryptoHMAC: CryptoHMAC
+}
