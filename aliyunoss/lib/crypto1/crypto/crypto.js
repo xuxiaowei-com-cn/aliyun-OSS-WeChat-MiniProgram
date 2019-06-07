@@ -4,15 +4,20 @@
  * Copyright (c) 2009, Jeff Mott. All rights reserved.
  * http://code.google.com/p/crypto-js/wiki/License
  */
+
+var util;
+
 (function() {
 
   var base64map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
   // Global Crypto object
-  window.Crypto = {};
+  var window = {
+    Crypto: {}
+  };
 
   // Crypto utilities
-  var util = Crypto.util = {
+  util = window.Crypto.util = {
 
     // Bit-wise rotate left
     rotl: function(n, b) {
@@ -177,6 +182,10 @@
   };
 
   // Crypto mode namespace
-  Crypto.mode = {};
+  window.Crypto.mode = {};
 
 })();
+
+module.exports = {
+  util: util
+}
