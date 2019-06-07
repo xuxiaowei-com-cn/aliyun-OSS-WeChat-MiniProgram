@@ -1,2 +1,53 @@
 <!--pages/aliyunoss/aliyunoss.wxml-->
 <!-- <text>pages/aliyunoss/aliyunoss.wxml</text> -->
+
+<view class="page">
+
+  <view class="page__hd">
+    <view class="page__title">Uploader</view>
+    <view class="page__desc">上传组件</view>
+  </view>
+
+  <view class="page__bd">
+    <view class="weui-cells">
+
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+
+            <!-- 提示 -->
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">图片上传</view>
+              <view class="weui-uploader__info">{{files.length}}/9</view>
+            </view>
+
+            <!-- 选择与图片显示 -->
+            <view class="weui-uploader__bd">
+
+              <!-- 遍历已选择的图片 -->
+              <view class="weui-uploader__files" id="uploaderFiles">
+                <block wx:for="{{files}}" wx:key="*this">
+                  <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                  </view>
+                </block>
+              </view>
+
+              <!-- 图片选择 -->
+              <view class="weui-uploader__input-box" wx-if="{{count > 0}}">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="weui-cells">
+        <button class="weui-btn" type="primary" bindtap="uploadImg">上传选中图片</button>
+    </view>
+
+  </view>
+</view>

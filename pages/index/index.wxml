@@ -9,7 +9,7 @@
   </view>
 
   <navigator url="../aliyunoss/aliyunoss" class='aliyunoss' hover-class="navigator-hover">
-    <button>上传页面</button>
+    <button class="weui-btn" type="default" plain="true">上传页面</button>
   </navigator>
 
   <view class="usermotto">
