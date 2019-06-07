@@ -4,21 +4,26 @@
  * Copyright (c) 2009, Jeff Mott. All rights reserved.
  * http://code.google.com/p/crypto-js/wiki/License
  */
+
+import crypto from '../crypto/crypto'
+
+var CryptoSHA1;
+
 (function() {
 
   // Shortcut
-  var util = Crypto.util;
+  var util = crypto.util;
 
   // Public API
-  var SHA1 = Crypto.SHA1 = function(message, options) {
-    var digestbytes = util.wordsToBytes(SHA1._sha1(message));
+  CryptoSHA1 = crypto.SHA1 = function(message, options) {
+    var digestbytes = util.wordsToBytes(CryptoSHA1._sha1(message));
     return options && options.asBytes ? digestbytes :
       options && options.asString ? util.bytesToString(digestbytes) :
       util.bytesToHex(digestbytes);
   };
 
   // The core
-  SHA1._sha1 = function(message) {
+  CryptoSHA1._sha1 = function(message) {
 
     var m = util.stringToWords(message),
       l = message.length * 8,
@@ -76,6 +81,10 @@
   };
 
   // Package private blocksize
-  SHA1._blocksize = 16;
+  CryptoSHA1._blocksize = 16;
 
 })();
+
+module.exports = {
+  CryptoSHA1: CryptoSHA1
+}
