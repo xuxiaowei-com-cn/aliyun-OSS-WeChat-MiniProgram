@@ -13,6 +13,8 @@ var g_object_name_type = ''
 var now, timestamp
 now = timestamp = Date.parse(new Date()) / 1000;
 
+var success_action_status = '200';
+
 var policyText = {
   "expiration": "2020-01-01T12:00:00.000Z", //设置该Policy的失效时间，超过这个失效时间之后，就没有办法通过这个policy上传文件了
   "conditions": [
@@ -164,3 +166,14 @@ function set_upload_param(up, filename, ret) {
 // });
 
 // uploader.init();
+
+/**
+ * 暴露接口
+ */
+module.exports = {
+  url: host,
+  policy: policyBase64,
+  OSSAccessKeyId: accessid,
+  signature: signature,
+  success_action_status: success_action_status
+}
