@@ -129,3 +129,7 @@
       }
 
     }
+
+    module.exports = {
+      Base64: Base64
+    }
