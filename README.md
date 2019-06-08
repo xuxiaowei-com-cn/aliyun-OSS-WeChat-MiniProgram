@@ -13,6 +13,12 @@
 # aliyun-OSS-WeChat-MiniProgram
 阿里云OSS微信小程序Web直传。
 
+# 相关文档
+
+- [小程序直传实践](https://help.aliyun.com/document_detail/92883.html)(更新时间：2019-04-26 16:37:01)
+
+- [使用 Web 端直传实践方案 Demo 进行上传测试](https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/internal/oss/0.0.4/assets/sample/oss-h5-upload-js-direct.zip)(更新时间：2019-04-26 16:37:01)
+
 # 使用方法
 
 - 修改 /aliyunoss/upload.js 中的 accessid、accesskey、host
