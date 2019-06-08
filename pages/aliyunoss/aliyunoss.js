@@ -12,6 +12,9 @@ Page({
     count: 9 // 最多可以选择的图片张数
   },
 
+  /**
+   * 选择图片
+   */
   chooseImage: function(e) {
     var that = this;
     var count = that.data.count; // 最多可以选择的图片张数
@@ -34,6 +37,10 @@ Page({
       }
     })
   },
+
+  /**
+   * 预览图片
+   */
   previewImage: function(e) {
 
     // https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.previewImage.html
@@ -53,26 +60,13 @@ Page({
     //  replace：http://www.w3school.com.cn/jsref/jsref_replace.asp
     // /：需要转译的字符串
     // g：替换所有
-    var key = new Date().toLocaleDateString().replace(/\//g, "-") // 上传路径
+    var key = new Date().toLocaleDateString().replace(/\//g, "-") // 上传路径，这里以当前日期为例
 
     for (var i = 0; i < files.length; i++) {
 
-      var chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678' /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
-      var maxPos = chars.length
-      var pwd = '' // 随机数，用于文件名
-      for (var j = 0; j < 10; j++) {
-        pwd += chars.charAt(Math.floor(Math.random() * maxPos))
-      }
-
       var file = files[i]
 
-      var pos = file.lastIndexOf('.')
-      var suffix = '' // 文件后缀名
-      if (pos != -1) {
-        suffix = file.substring(pos)
-      }
-
-      key += "/" + pwd + suffix
+      key += "/" + upload.randomString() + upload.getSuffix(file)
 
       // https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/wx.uploadFile.html
       wx.uploadFile({

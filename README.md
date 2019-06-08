@@ -12,3 +12,7 @@
 
 # aliyun-OSS-WeChat-MiniProgram
 阿里云OSS微信小程序Web直传。
+
+# 工具未校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书。
+
+- 为了方便测试
