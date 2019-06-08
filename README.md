@@ -19,12 +19,14 @@
 
 - [使用 Web 端直传实践方案 Demo 进行上传测试](https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/internal/oss/0.0.4/assets/sample/oss-h5-upload-js-direct.zip)(更新时间：2019-04-26 16:37:01)
 
-# 使用方法
+# 使用说明书
 
 - 修改 /aliyunoss/upload.js 中的 accessid、accesskey、host
 
 - 修改 project.config.json 中的 appid 为你的 appid
 
-# 工具未校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书。
+- 主要将文档([小程序直传实践](https://help.aliyun.com/document_detail/92883.html))中原JS([使用 Web 端直传实践方案 Demo 进行上传测试](https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/internal/oss/0.0.4/assets/sample/oss-h5-upload-js-direct.zip))修改为微信小程序语法
 
-- 为了方便测试
+- 工具未校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书。
+
+    - 为了方便测试
