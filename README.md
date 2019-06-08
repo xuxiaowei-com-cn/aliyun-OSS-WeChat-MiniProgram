@@ -13,6 +13,12 @@
 # aliyun-OSS-WeChat-MiniProgram
 阿里云OSS微信小程序Web直传。
 
+# 使用方法
+
+- 修改 /aliyunoss/upload.js 中的 accessid、accesskey、host
+
+- 修改 project.config.json 中的 appid 为你的 appid
+
 # 工具未校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书。
 
 - 为了方便测试
