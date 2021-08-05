@@ -46,7 +46,11 @@
     </view>
 
     <view class="weui-cells">
-        <button class="weui-btn" type="primary" bindtap="uploadImg">上传选中图片</button>
+        <button class="weui-btn" type="primary" bindtap="uploadImg">在微信中使用秘钥上传选中图片</button>
+    </view>
+
+    <view class="weui-cells">
+        <button class="weui-btn" type="primary" bindtap="signatureUploadImg">服务端签名后直传选中图片</button>
     </view>
 
   </view>
