@@ -104,11 +104,6 @@ Page({
   signatureUploadImg: function (e) {
     var files = this.data.files;
 
-    //  replace：http://www.w3school.com.cn/jsref/jsref_replace.asp
-    // /：需要转译的字符串
-    // g：替换所有
-    var key = new Date().toLocaleDateString().replace(/\//g, "-") // 上传路径，这里以当前日期为例
-
     var accessid;
     var callback;
     var dir;
@@ -136,7 +131,7 @@ Page({
 
           var file = files[i]
 
-          key = dir + key + "/" + upload.randomString() + upload.getSuffix(file)
+          var key = dir + upload.randomString() + upload.getSuffix(file)
 
           // https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/wx.uploadFile.html
           wx.uploadFile({
